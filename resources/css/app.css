@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+nav {
+  margin-left: 2rem;
+  div:nth-child(2) {
+    div:nth-child(2) {
+      margin-left: 12rem;
+    }
+
+  }
+}

@@ -1,0 +1,54 @@
+ 
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+
+    npm i tailwindcss-plugins -D --force
+
+    npm run dev
+
+
+    // vite.config.js :
+    import { defineConfig } from 'vite';
+	import laravel from 'laravel-vite-plugin';
+
+	export default defineConfig({
+	    plugins: [
+	        laravel({
+	            input: ['resources/css/app.css', 'resources/js/app.js'],
+	            refresh: true,
+	        }),
+	    ],
+	});
+
+
+	// resources/css/app.css
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+
+	// tailwind.config.js
+	export default {
+    content: [
+      "./resources/**/*.blade.php",
+      "./resources/**/*.js",
+      "./resources/**/*.vue",
+      './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+    ],
+    theme: {
+      extend: {},
+    },
+    plugins: [
+        require('tailwindcss-plugins/pagination'),
+        "tailwindcss ,autoprefixer"],
+  }
+
+
+  !! Pour customiser la pagination :
+  ----------------------------------
+
+  taper la commande 'php artisan vendor:publish --tag=laravel-pagination'
+
+  le template de la pagination 'tailwind.blade.php' se trouve, alors dans /resources/view/vendor/pagination
+
+  (le bootstrap 5 se trouve là aussi)
