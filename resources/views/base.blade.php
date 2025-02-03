@@ -18,9 +18,9 @@
 
       <div class="flex items-center space-x-8">
         <div class="shrink-0">
-          <a href="/" title="" class="flex gap-6">
+          <a href="/" title="" class="flex gap-4">
             <img class="block w-auto h-8" src="/docs/dotdev-logo.png" alt="">
-            <div class="text-white text-2xl font-medium">Dotdev 🐳 ☸️</div>
+            <div class="text-white text-2xl font-medium">Dotdev</div>
           </a>
         </div>
 
@@ -197,6 +197,23 @@
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
           </svg> 
         </button>
+
+        <!-- Github -->
+        <div class="text-white">
+          <a
+            href="https://github.com/tomatoweb/symfony-tailwind"
+            target="_blank"
+            class="flex axil-btn btn-fill-primary h-8 justify-center text-white">
+            <span class="">
+              <img alt='' class="w-8 mt-[1.19rem]" src="docs/DoubleChevron.svg"/>
+            </span>
+            <span class="mr-1 text-white">
+              Code on 
+            </span>
+            <img alt='' class="w-6" src="docs/64px-Octicons-mark-github.svg.png"/>
+            <img alt='' class="" src="images/Github.svg" />
+          </a>
+        </div>
 
         <div id="userDropdown1" class="hidden z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
           <ul class="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">

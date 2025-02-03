@@ -45,17 +45,17 @@ Launch server :
   php artisan serve
 
 
-launch mysql Wamp64
+launch mysql Server
 -------------------
 
 
-Debug Bar :
----------
+Install Debug Bar :
+-----------------
   composer require barryvdh/laravel-debugbar --dev
 
 
-Eloquent :
---------
+Eloquent commands :
+-----------------
 
   php artisan   make:model Product -m    (or --migration)
     
