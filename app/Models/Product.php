@@ -13,7 +13,6 @@ class Product extends Model
 
     // allowed props list
     protected $fillable = [
-      'id',
      'name' 
     ];
 

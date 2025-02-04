@@ -201,7 +201,7 @@
         <!-- Github -->
         <div class="text-white">
           <a
-            href="https://github.com/tomatoweb/symfony-tailwind"
+            href="https://github.com/tomatoweb/laravel-tailwind"
             target="_blank"
             class="flex axil-btn btn-fill-primary h-8 justify-center text-white">
             <span class="">
