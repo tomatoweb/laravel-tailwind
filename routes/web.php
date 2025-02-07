@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Models\Profile;
@@ -34,7 +35,13 @@ Route::prefix('/products')->name('products.')->controller(ProductController::cla
         'post' => '[0-9]+'
         
     ])->name('show');
+
+    Route::delete('/{id}', 'destroy')->name('destroy');
 });
+
+Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::post('/login', [AuthController::class, 'doLogin'])->name('auth.dologin');
+Route::delete('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 // CRUD shortcut route
 Route::prefix('admin')->name('admin.')->group(function () {

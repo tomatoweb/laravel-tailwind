@@ -191,15 +191,27 @@
         <button id="userDropdownButton1" data-dropdown-toggle="userDropdown1" type="button" class="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
           <svg class="w-5 h-5 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-          </svg>              
-          Account
+          </svg>
+          @auth
+          {{ Auth::user()->name }}
+          @endauth
+          @guest       
+            <a href="{{ route('auth.login') }}" class="text-white">Sign In</a>
+          @endguest
           <svg class="w-4 h-4 text-gray-900 dark:text-white ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
           </svg> 
         </button>
+        @auth
+        <form action="{{ route('auth.logout') }}" method="post" class="text-sm">
+          @method('delete')
+          @csrf
+        <button class="text-white">Sign Out</button>
+        </form>
+        @endauth
 
         <!-- Github -->
-        <div class="text-white">
+        <div class="text-white pl-10">
           <a
             href="https://github.com/tomatoweb/laravel-tailwind"
             target="_blank"
@@ -214,6 +226,7 @@
             <img alt='' class="" src="images/Github.svg" />
           </a>
         </div>
+
 
         <div id="userDropdown1" class="hidden z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
           <ul class="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">

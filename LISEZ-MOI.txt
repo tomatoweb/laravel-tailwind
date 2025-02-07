@@ -58,9 +58,26 @@ Eloquent commands :
 -----------------
 
   php artisan   make:model Product -m    (or --migration)
+
+  php artisan make:migration
     
 
   php artisan   migrate
 
 
   php artisan   make:controller MyController
+
+
+  seed:
+  ----
+
+  // DatabaseSeeder.php
+  public function run(): void
+    {
+        User::factory(10)->create();
+        User::factory()->unverified()->create();
+    }
+
+
+
+  php artisan db:seed
