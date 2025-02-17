@@ -4,6 +4,16 @@
 
 @section('content')
 
+    @php
+      $type =  "warning"
+    @endphp
+
+    <x-alert type="alert">Some informations</x-alert>
+
+    <!--x-alert :type=$type></x-alert -->
+
+    <!-- x-meteo></!-- -->
+
     <div class="grid grid-cols-4 gap-4 mt-10">
         @foreach ($products as $product )
             
@@ -27,7 +37,7 @@
                     @csrf
                     @method('DELETE')
                     <button class="bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-4 border border-red-700 rounded-md">
-                      Delete <
+                      Delete
                     </button>
                   </form>
                 </div>

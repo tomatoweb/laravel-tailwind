@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/products', [App\Http\Controllers\Api\ProductController::class, 'index']);
+Route::get('/weather', [App\Http\Controllers\Api\WeatherController::class, 'index']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) { // redirect to /login
     return $request->user();
 });

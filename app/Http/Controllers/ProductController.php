@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
+use App\Weather;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -17,8 +18,12 @@ use Illuminate\View\View;
 class ProductController extends Controller
 {
 
-  public function index(Request $req): View
+  public function index(Request $req, Weather $weather): View
   {
+
+    //dd($weather);
+    //dd(app('weather'));
+    //dd(app(Weather::class));
 
     /* User::create([
       'name' => 'John Doe',

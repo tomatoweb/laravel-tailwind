@@ -5,10 +5,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Models\Profile;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\DB;
 */
 
 // simple route
-Route::get('/', [ProductController::class, 'index'])->name('home');
+Route::get('/', [ProductController::class, 'index'])->name('home')->middleware('ip');
 
 
 // group route
@@ -39,8 +40,12 @@ Route::prefix('/products')->name('products.')->controller(ProductController::cla
     Route::delete('/{id}', 'destroy')->name('destroy');
 });
 
-Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
-Route::post('/login', [AuthController::class, 'doLogin'])->name('auth.dologin');
+Route::get('/login', function (Request $request) {
+    return User::first()->createToken('auth_token')->plainTextToken;
+})->name('auth.login');
+
+//Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::post('/login', [AuthController::class, 'doLogin']);
 Route::delete('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 // CRUD shortcut route
@@ -61,6 +66,18 @@ Route::get('/testdbconnect', function (){
     } catch(Exception $e) {
         return "Error in connecting to the database";
     }
+})->middleware('auth');
+
+// test token
+Route::get('/testtoken', function (Request $request){
+    $token = csrf_token();
+    $token_ = $request->session()->token();
+    return $token;
+});
+
+// test route 
+Route::get('/test', function (){
+    Session::put('login', 'you are logged in');
 });
 
 
