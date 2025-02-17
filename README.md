@@ -1,83 +1,18 @@
+This is a nice ready-to-use Laravel-Tailwind ecommerce app.
 
-Install :
--------
-  composer create-project laravel/laravel myapp
+Everything you need to start building your shop app is implemented for you:
 
-  npm i
+- routes
+- views 
+- controllers
+- models (factories, seeders)
+- database multi-connections
+- tests phpunit and features tests
 
-  npm i jquery --force 
+Feel free to clone and customize.
+Need help? msg me !
 
-  import jquery in resources/js/app.js :  import $ from 'jquery';
-
-  import app.js in base.blade.php : @vite('resources/js/app.js')
-
-
-
-By default Vite and Tailwind are installed :
-------------------------------------------
-
-// package.json :
-
-  {
-      "private": true,
-      "scripts": {
-          "dev": "vite",
-          "build": "vite build"
-      },
-      "devDependencies": {
-          "autoprefixer": "^10.4.19",
-          "axios": "^1.1.2",
-          "laravel-vite-plugin": "^0.7.2",
-          "postcss": "^8.4.40",
-          "tailwindcss": "^3.4.7",
-          "tailwindcss-plugins": "^0.3.0",
-          "vite": "^4.0.0"
-      }
-  }
-
-Start Vite development server :
------------------------------
-  npm run dev
-
-
-Launch server :
--------------
-  php artisan serve
-
-
-launch mysql Server
--------------------
-
-
-Install Debug Bar :
------------------
-  composer require barryvdh/laravel-debugbar --dev
-
-
-Eloquent commands :
------------------
-
-  php artisan   make:model Product -m    (or --migration)
-
-  php artisan make:migration
-    
-
-  php artisan   migrate
-
-
-  php artisan   make:controller MyController
-
-
-  seed:
-  ----
-
-  // DatabaseSeeder.php
-  public function run(): void
-    {
-        User::factory(10)->create();
-        User::factory()->unverified()->create();
-    }
+Enjoy!
 
 
 
-  php artisan db:seed
