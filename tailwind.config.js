@@ -7,7 +7,11 @@ export default {
       './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
     ],
     theme: {
-      extend: {},
+      extend: {
+        colors: {
+            'regal-blue': '#243c5a',
+          }
+      },
     },
     plugins: ["tailwindcss ,autoprefixer"],
   }

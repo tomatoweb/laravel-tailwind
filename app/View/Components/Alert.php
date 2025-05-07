@@ -11,7 +11,7 @@ class Alert extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $type = 'info')
+    public function __construct(public string $bg)
     {
         //
     }
@@ -24,3 +24,4 @@ class Alert extends Component
         return view('components.alert');
     }
 }
+

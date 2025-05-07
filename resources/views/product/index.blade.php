@@ -5,10 +5,23 @@
 @section('content')
 
     @php
-      $type =  "warning"
+      $bg = "bg-orange-300 text-orange-900"; // https://tailwindcss.com/docs/detecting-classes-in-source-files#safelisting-classes
+      $bg = "bg-violet-300 text-violet-900";
+      $bg = "bg-cyan-300 text-cyan-900";
+      $bg = "bg-sky-300 text-sky-900";
+      $bg = "bg-lime-300 text-lime-900";
+      $bg = "bg-teal-300 text-teal-900";
+      $bg = "bg-purple-300 text-purple-900";
+      $bg = "bg-fuchsia-300 text-fuchsia-900";
+      $bg = "bg-pink-300 text-pink-900";
+      $bg = "bg-yellow-300 text-yellow-900";
+      $bg = "bg-rose-300 text-rose-900";
+      $bg = "bg-indigo-300 text-indigo-900";
     @endphp
 
-    <x-alert type="alert">Some informations</x-alert>
+    <x-alert :$bg>
+        Some informations
+    </x-alert>
 
     <!--x-alert :type=$type></x-alert -->
 
@@ -16,7 +29,7 @@
 
     <div class="grid grid-cols-4 gap-4 mt-10">
         @foreach ($products as $product )
-            
+
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img class="rounded-t-lg p-6" src="/docs/{{$product->image}}" alt="" />
@@ -42,7 +55,7 @@
                   </form>
                 </div>
             </div>
-        </div>   
+        </div>
         @endforeach
     </div>
 

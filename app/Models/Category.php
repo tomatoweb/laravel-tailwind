@@ -13,9 +13,7 @@ class Category extends Model
     protected $table = 'category';
 
     // allowed props list
-    protected $fillable = [
-     'name' 
-    ];
+    protected $fillable = ['name'];
 
     // banned props list
     protected $guarded = [];

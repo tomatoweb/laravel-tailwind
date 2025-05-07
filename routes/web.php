@@ -21,20 +21,20 @@ use Illuminate\Support\Facades\Session;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 // simple route
 Route::get('/', [ProductController::class, 'index'])->name('home')->middleware('ip');
+//Route::view('/', 'welcome');
 
 
 // group route
 Route::prefix('/products')->name('products.')->controller(ProductController::class)->group( function () {
-    
+
     Route::get('/', 'index')->name('index');
 
     Route::get('/{name}/{product}', 'show')->where([
         'name' => '[0-9a-zA-Z\-\[\]\(\)+",®\: ]+',
         'post' => '[0-9]+'
-        
+
     ])->name('show');
 
     Route::delete('/{id}', 'destroy')->name('destroy');
@@ -55,7 +55,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
 
- 
+
 
 // test dev connection DB
 Route::get('/testdbconnect', function (){
@@ -75,7 +75,7 @@ Route::get('/testtoken', function (Request $request){
     return $token;
 });
 
-// test route 
+// test route
 Route::get('/test', function (){
     Session::put('login', 'you are logged in');
 });

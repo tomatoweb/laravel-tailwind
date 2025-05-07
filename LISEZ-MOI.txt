@@ -1,3 +1,9 @@
+Demo :
+----
+
+npm run dev
+php artisan serve
+
 
 Install :
 -------
@@ -5,7 +11,7 @@ Install :
 
   npm i
 
-  npm i jquery --force 
+  npm i jquery --force
 
   import jquery in resources/js/app.js :  import $ from 'jquery';
 
@@ -60,7 +66,7 @@ Eloquent commands :
   php artisan   make:model Product -m    (or --migration)
 
   php artisan make:migration
-    
+
 
   php artisan   migrate
 
