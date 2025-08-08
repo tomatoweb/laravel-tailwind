@@ -23,8 +23,6 @@ use Illuminate\Support\Facades\Session;
 */
 // simple route
 Route::get('/', [ProductController::class, 'index'])->name('home')->middleware('ip');
-//Route::view('/', 'welcome');
-
 
 // group route
 Route::prefix('/products')->name('products.')->controller(ProductController::class)->group( function () {

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.phpdebugbar{
+    visibility: hidden;
+}
+
 
 nav {
   margin-left: 2rem;
@@ -18,13 +22,13 @@ nav {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.04em;
-  padding-right: 10px;
+  padding: 0px 8px 0px 8px;
   opacity: 0.95;
   text-align: center;
   align-items: center;
   transition: all .3s ease-in-out;
   position: relative;
-  z-index: 1;    
+  z-index: 1;
   &.btn-borderd {
       border: grey;
       color: var(--color-dark);
@@ -38,7 +42,7 @@ nav {
   &.btn-fill-primary {
       background-color: #238636;
       color: white;
-      overflow: hidden;        
+      overflow: hidden;
       &::after {
           content: "";
           height: 300px;
@@ -52,10 +56,10 @@ nav {
           transition: .5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
           z-index: -1;
       }
-      &:hover {            
+      &:hover {
           &::after {
               transform: translateY(-50%) translateX(-50%) scale(1);
           }
-      }        
+      }
   }
 }

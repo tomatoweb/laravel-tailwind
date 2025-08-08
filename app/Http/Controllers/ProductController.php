@@ -20,34 +20,21 @@ class ProductController extends Controller
 
   public function index(Request $req, Weather $weather): View
   {
-
-    //dd($weather);
-    //dd(app('weather'));
-    //dd(app(Weather::class));
-
-    /* User::create([
-      'name' => 'John Doe',
-      'email' => 'john@doe.fr',
-      'password' => Hash::make('pwd')
-      ]); */
-
-    
-
     /* Query Builder: https://laravel.com/docs/11.x/queries */
 
     /* SELECT */
-    $products = Product::all('id', 'name', 'category_id'); 
+    $products = Product::all('id', 'name', 'category_id');
     foreach($products as $p) {
       $p->cat_name = $p->category?->name; // !! n+1 problem: one select category.name for each product !!
-    } 
+    }
     // solution to n+1 problem
     $products = Product::with('category')->get(); // "eager loading" : select * from `category` where `category`.`id` in (1, 2, 3, 4, 5, 6, 7)
 
     $products = Product::where('id', '>', 2)->limit(2)->get();
-    $product = Product::all()->first(); 
+    $product = Product::all()->first();
     $category_name = $product->category?->name;  //  ~ if category_id is not null (see belongsTo() in Model)
-    
-    
+
+
     /* INSERT */
     $product = new Product();
     $product->name = "IPhone";

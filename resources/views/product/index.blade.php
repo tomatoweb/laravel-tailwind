@@ -27,12 +27,12 @@
 
     <!-- x-meteo></!-- -->
 
-    <div class="grid grid-cols-4 gap-4 mt-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
         @foreach ($products as $product )
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img class="rounded-t-lg p-6" src="/docs/{{$product->image}}" alt="" />
+                <img class="max-h-80 rounded-t-lg p-6" src="/docs/{{$product->image}}" alt="" />
             </a>
             <div class="p-5">
                 <a href="#">
@@ -66,7 +66,7 @@
 <div class="mt-8 flex">
     {{$products->links()}}
 </div>
-<div class="text-white float-end mb-8">Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }} - {{ PHP_SAPI }})</div>
+<div class="text-white float-end mt-8">Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }} - {{ PHP_SAPI }})</div>
 
 @endsection
 
