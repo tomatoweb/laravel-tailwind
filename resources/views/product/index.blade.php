@@ -30,9 +30,9 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-10">
         @foreach ($products as $product )
 
-        <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
-                <img class="max-h-80 rounded-t-lg p-6" src="/docs/{{$product->image}}" alt="" />
+        <div class="z-30 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="{{ route('products.show', ['name'=>$product->name, 'product'=>$product->id]) }}">
+                <img class="rounded-t-lg p-6" src="/docs/{{$product->image}}" alt="" />
             </a>
             <div class="p-5">
                 <a href="#">
