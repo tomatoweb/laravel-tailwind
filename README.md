@@ -1,6 +1,6 @@
-This is a nice ready-to-use Laravel-Tailwind ecommerce app.
+## This is a nice ready-to-use Laravel Tailwind e-commerce app.
 
-Everything you need to start building your shop app is implemented for you:
+### Laravel topics included:
 
 - routes
 - views 
@@ -9,10 +9,12 @@ Everything you need to start building your shop app is implemented for you:
 - database multi-connections
 - tests phpunit and features tests
 
-Feel free to clone and customize.
-Need help? msg me !
+### Demo
 
-Enjoy!
-
+- configure your .env file
+- run `composer install` // vendor dependencies (composer.json)
+- run `npm install && npm run dev` // node_modules default frontend dependencies (package.json)
+- run `php artisan migrate --seed`
+- run `php artisan serve`
 
 
