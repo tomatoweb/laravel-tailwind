@@ -1,4 +1,4 @@
-[Laravel-Tailwind](git@github.com:tomatoweb/laravel-tailwind.git)
+[Laravel-Tailwind](https://gitlab.com/mathiasappelmans/laravel-tailwind)
 
 ## This is a nice ready-to-use Laravel Tailwind e-commerce app.
 
