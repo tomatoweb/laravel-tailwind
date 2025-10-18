@@ -1,0 +1,37 @@
+image: lakzal/phpqa:latest
+
+before_script:
+  - composer install --prefer-dist --no-interaction
+
+cache:
+  paths:
+    - vendor/
+
+stages:
+  - SecurityChecker
+  - CodeStandards
+  - UnitTests
+
+security_check:
+  stage: SecurityChecker
+  script:
+    - security-checker security:check composer.lock
+  allow_failure: false
+
+phpcs:
+  stage: CodeStandards
+  script:
+    - phpcs --standard=PSR12 --ignore=vendor/ ./src
+  allow_failure: false
+
+phpstan:
+  stage: CodeStandards
+  script:
+    - phpstan analyse ./src
+  allow_failure: false
+
+phpunit:
+  stage: UnitTests
+  script:
+    - phpunit --configuration phpunit.xml
+  allow_failure: false
