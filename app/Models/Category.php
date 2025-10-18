@@ -18,7 +18,7 @@ class Category extends Model
     // banned props list
     protected $guarded = [];
 
-    public function posts() {
+    public function products() {
       return $this->hasMany(Product::class);
     } 
 }
