@@ -33,6 +33,8 @@ php artisan key:generate
 - run `composer install` // vendor dependencies (composer.json)
 - run `npm install --force && npm run dev` // node_modules default frontend dependencies (package.json)
 - run `php artisan migrate`, create tables and populate 'product' table
+- or run `php artisan migrate:fresh` if you have allready a populated db
+- The `fresh` command drops all tables and then re-runs all migrations from scratch. Unlike `refresh`, it doesn't roll back the migrations – it simply drops the tables and runs the `up()` methods again.
 - you can change the populate migration, run `php artisan migrate:rollback`, change the migrations files and run `php artisan migrate`
 - run `php artisan serve` 
 
