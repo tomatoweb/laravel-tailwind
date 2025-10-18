@@ -54,13 +54,7 @@ class ProductController extends Controller
 
     /* RELATION */
     $category_name = Product::all()->first()->category?->name; // needs belongsTo() in Model
-    $products = Category::find(6)->posts; // needs hasMany() in Model
-
-
-
-    /* --------------------------------------------------------- */
-
-
+    $products = Category::find(6)?->posts; // needs hasMany() in Model
 
     $products = Product::orderBy('created_at', 'desc')->paginate(8)->appends(['sort' => 'votes']);
 
