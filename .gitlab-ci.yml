@@ -1,4 +1,4 @@
-image: lakzal/phpqa:7.4
+image: lakzal/phpqa
 
 before_script:
   - composer install --prefer-dist --no-interaction
