@@ -23,10 +23,13 @@
         Some informations
     </x-alert>
 
+    <livewire:counter />
+    @lifewire('counter')
+
     <!--x-alert :type=$type></x-alert -->
 
     <!-- x-meteo></!-- -->
-
+    @empty(!$products)
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-10">
         @foreach ($products as $product )
 
@@ -58,7 +61,7 @@
         </div>
         @endforeach
     </div>
-
+    @endempty
 
     @empty($products)
         <h3>no product.</h3>

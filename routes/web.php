@@ -51,10 +51,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
   Route::resource('product', ProductController::class)->except(['']);
 });
 
-
-
-
-
 // test dev connection DB
 Route::get('/testdbconnect', function (){
     try {
@@ -77,6 +73,10 @@ Route::get('/testtoken', function (Request $request){
 Route::get('/test', function (){
     Session::put('login', 'you are logged in');
 });
+
+// Livewire test route
+// need php artisan make:layout
+Route::get('/counter', App\Livewire\Counter::class);
 
 
 
